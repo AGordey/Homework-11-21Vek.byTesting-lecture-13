@@ -43,8 +43,8 @@ public class TestingFormTests extends TestBase {
                 open(Configuration.baseUrl));
         step("Check Search Function", () -> {
             $("#catalogSearch").setValue("Детские коляски").pressEnter();
-            $(".content__header cr-category_header").shouldHave(text("Детские коляски"));
-        });
+            $(".content__header.cr-category_header").shouldHave(text("Результаты поиска"));
+            });
     }
 
 
