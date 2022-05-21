@@ -1,6 +1,7 @@
 package by.twentyfirstvek;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class TestingFormTests extends TestBase {
 
     @Test
+    @Disabled
     @DisplayName("Check Header 21Vek.by")
     void checkHeaderMainPage() {
         step("Open 21Vek.by page", () ->
@@ -29,6 +31,7 @@ public class TestingFormTests extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Check Footer 21Vek.by")
     void checkFooterMainPage() {
         step("Open 21Vek.by page", () ->
