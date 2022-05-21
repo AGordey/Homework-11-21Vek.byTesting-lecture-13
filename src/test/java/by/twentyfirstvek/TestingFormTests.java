@@ -17,7 +17,7 @@ public class TestingFormTests extends TestBase {
         step("Open 21Vek.by store", () -> {
             open(Configuration.baseUrl);
             $("#header").shouldHave(text("г. Минск"));
-            $("#header").shouldHave(text("Оплата частями"));
+            $("#header").shouldHave(text("Оплата частями 2"));
             $("#header").shouldHave(text("Бонусная программа"));
             $("#header").shouldHave(text("Еще"));
             });
