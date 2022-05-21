@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -36,17 +38,16 @@ public class TestingFormTests extends TestBase {
                     text("Обработка персональных данных"),
                     text("Оплата"));
         });
-    }    @Test
+    }
+    @Test
     @DisplayName("Check Search Function 21Vek.by")
     void checkSearchFunction() {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Search Function", () -> {
-            $("#catalogSearch").click();
             $("#catalogSearch").setValue("Детские коляски").pressEnter();
-            sleep(6000);
-            $(".content__header.cr-category_header").shouldHave(text("Результаты поиска"));
-            });
+            $(".content__header.cr-category_header").shouldHave(text("Результаты поиска"), Duration.ofSeconds(10));
+        });
     }
 
 
