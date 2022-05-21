@@ -64,8 +64,8 @@ public class ShopTwentyFirst extends TestBase {
         step("Check Authorization ", () -> {
             $(".userToolsText").click();
             $(".userToolsBtn").click();
-            $("#login-email").setValue("888chelovek888@gmail.com");
-            $("#login-password").setValue("jndthnrf").pressEnter();
+            $("#login-email").setValue(config.login1());
+            $("#login-password").setValue(config.password1()).pressEnter();
             $(byText("Аккаунт")).click();
             $(".userToolsSubtitle").shouldHave(text("888chelovek888@gmail.com"));
         });
