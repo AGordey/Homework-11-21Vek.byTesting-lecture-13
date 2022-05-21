@@ -42,6 +42,7 @@ public class TestingFormTests extends TestBase {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Search Function", () -> {
+            $("#catalogSearch").click();
             $("#catalogSearch").setValue("Детские коляски").pressEnter();
             sleep(6000);
             $(".content__header.cr-category_header").shouldHave(text("Результаты поиска"));
