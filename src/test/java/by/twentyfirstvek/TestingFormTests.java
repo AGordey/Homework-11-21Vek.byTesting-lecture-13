@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -26,6 +27,7 @@ public class TestingFormTests extends TestBase {
                     text("Еще"));
         });
     }
+
     @Test
     @DisplayName("Check Footer 21Vek.by")
     void checkFooterMainPage() {
@@ -39,6 +41,7 @@ public class TestingFormTests extends TestBase {
                     text("Оплата"));
         });
     }
+
     @Test
     @DisplayName("Check Search Function 21Vek.by")
     void checkSearchFunction() {
@@ -50,14 +53,21 @@ public class TestingFormTests extends TestBase {
         });
     }
 
+    @Test
+    @DisplayName("Check Authorization Function 21Vek.by")
+    void checkAuthorizationFunction() {
+        step("Open 21Vek.by page", () ->
+                open(Configuration.baseUrl));
+        step("Check Authorization ", () -> {
+            $(byText("Аккаунт")).click();
+            $(".userToolsBtn").click();
+            $("#login-email").setValue("888chelovek888@gmail.com");
+            $("#login-password").setValue("jndthnrf").pressEnter();
+            $(byText("Аккаунт")).click();
+            $(".userToolsSubtitle").shouldHave(text("888chelovek888@gmail.com"));
+        });
 
-
-
-
-
-
-
-
+    }
 }
 //    @Test
 //    @DisplayName("Registration form")
