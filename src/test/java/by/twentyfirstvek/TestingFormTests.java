@@ -26,7 +26,7 @@ public class TestingFormTests extends TestBase {
     }
     @Test
     @DisplayName("Check Footer 21Vek.by")
-    void checkHeaderMainPage() {
+    void checkFooterMainPage() {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Footer", () -> {
