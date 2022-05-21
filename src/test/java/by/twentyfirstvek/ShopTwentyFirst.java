@@ -66,12 +66,11 @@ public class ShopTwentyFirst extends TestBase {
             $(".userToolsBtn").click();
             $("#login-email").setValue(config.login1());
             $("#login-password").setValue(config.password1()).pressEnter();
-            sleep(8);
+            sleep(8000);
             $(".userToolsText").click();
             $(".userToolsSubtitle").shouldHave(text("888chelovek888@gmail.com"));
         });
     }
-
     @Test
     @DisplayName("Check Grass cuts 21Vek.by")
     void checkGrassCuts () {
