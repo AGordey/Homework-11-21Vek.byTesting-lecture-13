@@ -70,7 +70,17 @@ public class TestingFormTests extends TestBase {
             $(byText("Аккаунт")).click();
             $(".userToolsSubtitle").shouldHave(text("888chelovek888@gmail.com"));
         });
+    }
 
+    @Test
+    @DisplayName("Check Сhapter Grass cuts 21Vek.by")
+    void checkСhapter () {
+        step("Open 21Vek.by page", () ->
+                open(Configuration.baseUrl));
+        step("Check Сhapter Grass cuts ", () -> {
+            $(byText("Газонокосилки")).click();
+            $(".content__header.cr-category_header").shouldHave(text("Газонокосилки"));
+        });
     }
 }
 
