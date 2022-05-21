@@ -73,11 +73,11 @@ public class TestingFormTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Check Сhapter Grass cuts 21Vek.by")
-    void checkСhapter () {
+    @DisplayName("Check Grass cuts 21Vek.by")
+    void checkGrassCuts () {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
-        step("Check Сhapter Grass cuts ", () -> {
+        step("Check Grass cuts ", () -> {
             $(byText("Газонокосилки")).click();
             $(".content__header.cr-category_header").shouldHave(text("Газонокосилки"));
         });
