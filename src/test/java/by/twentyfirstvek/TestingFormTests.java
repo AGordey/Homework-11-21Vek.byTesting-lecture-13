@@ -12,9 +12,9 @@ import static io.qameta.allure.Allure.step;
 public class TestingFormTests extends TestBase {
 
     @Test
-    @DisplayName("Check Header Main Page 21Vek.by")
+    @DisplayName("Check Header 21Vek.by")
     void checkHeaderMainPage() {
-        step("Open 21Vek.by store", () ->
+        step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Header", () -> {
             $("#header").shouldHave(
@@ -24,6 +24,28 @@ public class TestingFormTests extends TestBase {
                     text("Еще"));
         });
     }
+    @Test
+    @DisplayName("Check Footer 21Vek.by")
+    void checkHeaderMainPage() {
+        step("Open 21Vek.by page", () ->
+                open(Configuration.baseUrl));
+        step("Check Footer", () -> {
+            $("#footer-inner").shouldHave(
+                    text("Покупателям"),
+                    text("Доставка"),
+                    text("Обработка персональных данных"),
+                    text("Оплата"));
+        });
+    }
+
+
+
+
+
+
+
+
+
 }
 //    @Test
 //    @DisplayName("Registration form")
