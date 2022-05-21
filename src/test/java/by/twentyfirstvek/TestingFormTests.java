@@ -1,9 +1,7 @@
 package by.twentyfirstvek;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 
@@ -15,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 
 public class TestingFormTests extends TestBase {
 
+    @Order(2)
     @Test
     @DisplayName("Check Header 21Vek.by")
     void checkHeaderMainPage() {
@@ -55,6 +54,8 @@ public class TestingFormTests extends TestBase {
         });
     }
 
+
+    @Order(1)
     @Test
     @DisplayName("Check Authorization Function 21Vek.by")
     void checkAuthorizationFunction() {
