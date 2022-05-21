@@ -63,7 +63,7 @@ public class TestingFormTests extends TestBase {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Authorization ", () -> {
-            $(".userToolsText")).click();
+            $(".userToolsText").click();
             $(".userToolsBtn").click();
             $("#login-email").setValue("888chelovek888@gmail.com");
             $("#login-password").setValue("jndthnrf").pressEnter();
