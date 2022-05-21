@@ -8,6 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
 
 
@@ -66,7 +67,7 @@ public class ShopTwentyFirst extends TestBase {
             $(".userToolsBtn").click();
             $("#login-email").setValue(config.login1());
             $("#login-password").setValue(config.password1()).pressEnter();
-            $(byText("Аккаунт")).click();
+            $(".userToolsText").click();
             $(".userToolsSubtitle").shouldHave(text("888chelovek888@gmail.com"));
         });
     }
