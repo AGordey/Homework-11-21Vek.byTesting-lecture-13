@@ -8,6 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
 
 
@@ -62,7 +63,7 @@ public class TestingFormTests extends TestBase {
         step("Open 21Vek.by page", () ->
                 open(Configuration.baseUrl));
         step("Check Authorization ", () -> {
-            $(byText("Аккаунт")).click();
+            $(".userToolsText")).click();
             $(".userToolsBtn").click();
             $("#login-email").setValue("888chelovek888@gmail.com");
             $("#login-password").setValue("jndthnrf").pressEnter();
