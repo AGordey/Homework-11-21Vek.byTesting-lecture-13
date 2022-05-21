@@ -36,6 +36,15 @@ public class TestingFormTests extends TestBase {
                     text("Обработка персональных данных"),
                     text("Оплата"));
         });
+    }    @Test
+    @DisplayName("Check Search Function 21Vek.by")
+    void checkSearchFunction() {
+        step("Open 21Vek.by page", () ->
+                open(Configuration.baseUrl));
+        step("Check Search Function", () -> {
+            $("#catalogSearch").setValue("Детские коляски").pressEnter();
+            $(".content__header cr-category_header").shouldHave(text("Детские коляски"));
+        });
     }
 
 
