@@ -1,5 +1,5 @@
-# Проект по автоматизации тестирования интернет-магазина Лабиринт
-## <a target="_blank" href="https://www.labirint.ru/">Интернет-магазин Лабиринт</a>
+# Проект по автоматизации тестирования онлайн-гипермаркета 21vek.by
+## <a target="_blank" href="https://www.21vek.by/">Онлайн-гипермаркет 21vek.by</a>
 
 ## :floppy_disk: Содержание:
 
@@ -9,9 +9,8 @@
 - <a href="#arrow_forward-запуск-из-терминала">Запуск из терминала</a>
 - <a href="#open_book-allure-отчет">Allure отчет</a>
 - <a href="#hammer-allure-test-ops-отчет">Allure Test Ops отчет</a>
-- <a href="#wrench-интеграция-с-jira">Интеграция с Jira</a>
 - <a href="#robot-отчет-в-telegram">Отчет в Telegram</a>
-- <a href="#film_projector-видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
+- <a href="#film_projector-видео-примеры-прохождения-тестов">Видео с примером прохождения теста авторизации</a>
 
 ## :computer: Технологии и инструменты
 <p align="center">
@@ -28,18 +27,16 @@
 </p>
 
 ## :notebook_with_decorative_cover: Реализованные проверки
-- Проверка наличия надписи Лабиринт | Книжный интернет-магазин: купить книги, новинки, бестселлеры
-- Переход в раздел Школа
+- Проверка наличия пунктов хедера 
+- Проверка наличия пунктов футера
+- Переход в раздел Газонокосилок
 - Проверка поиска
-- Проверка перехода в кабинет
-- Добавление товара в корзину
-- Проверка отсутствия ошибок в консоли бразуера
-- Проверка работы поиска в разделе помощь
+- Проверка авторизации
 
 ## :electric_plug: Сборка в Jenkins
-### <a target="_blank" href="https://jenkins.autotests.cloud/job/irinaleonteva_qaguru_11_13_jenkins/">Сборка в Jenkins</a>
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/C12-Andrei_Gordey-lesson13-21Vek.byTesting/">Сборка в Jenkins</a>
 <p align="center">
-<img title="Jenkins Dashboard" src="images/screenshots/jenkins-dashboard.png">
+<img title="Jenkins Dashboard" src="images/screenshots/Jenkins.png">
 </p>  
 
 ## :arrow_forward: Запуск из терминала
@@ -52,38 +49,33 @@ gradle clean test
 ```
 clean
 test
--Dremote=${REMOTE}
--Dbrowser=${BROWSER}
+-Dbrowser_size=${BROWSER_SIZE}
+-Dbase_url=${BASE_URL}
+-Dserver_selenoid=${SERVER_SELENOID}
 ```
+## :hammer: Запуск сборки с параметрами в Jenkins
+<p align="center">
+<img title="Allure Test Ops Launch" src="images/screenshots/Params for suite.png">
+</p>
 
 ## :open_book: Allure отчет
 - ### Главный экран отчета
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screenshots/allure-main-page.png">
+<img title="Allure Overview Dashboard" src="images/screenshots/Allure-All-Trends.png">
 </p>
 
 - ### Страница с проведенными тестами
 <p align="center">
-<img title="Allure Test Page" src="images/screenshots/allure-test-page.png">
-</p>
-
-## :hammer: Allure Test Ops отчет
-<p align="center">
-<img title="Allure Test Ops Launch" src="images/screenshots/allure-test-ops-page.png">
-</p>
-
-## :wrench: Интеграция с Jira
-<p align="center">
-<img title="Jira Issue Dashboard" src="images/screenshots/jira-issue-page.png">
+<img title="Allure Test Page" src="images/screenshots/All testcase.png">
 </p>
 
 ## :robot: Отчет в Telegram
 <p align="center">
-<img title="Telegram notification message" src="images/screenshots/telegram-bot.png">
+<img title="Telegram notification message" src="images/screenshots/telegram-notification.png">
 </p>
 
 ## :film_projector: Видео примеры прохождения тестов
-> К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
+> К каждому тесту в отчете прилагается видео. Как пример, видео проверки авторизации.
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/test-run.gif">
+  <img title="Selenoid Video" src="images/gif/Checking Authorization function.gif">
 </p>
